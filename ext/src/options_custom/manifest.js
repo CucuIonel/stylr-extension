@@ -1,6 +1,6 @@
 // SAMPLE
 this.manifest = {
-    "name": "My Extension",
+    "name": "Stylr",
     "icon": "icon.png",
     "settings": [
         {
@@ -84,19 +84,19 @@ this.manifest = {
                     {
                         "value": "hot",
                         "text": "Very hot",
-                        "group": "Hot",
+                        "group": "Hot"
                     },
                     {
                         "value": "Medium",
-                        "group": 1,
+                        "group": 1
                     },
                     {
                         "value": "Cold",
-                        "group": 2,
+                        "group": 2
                     },
                     ["Non-existing"]
-                ],
-            },
+                ]
+            }
         },
         {
             "tab": "Details",

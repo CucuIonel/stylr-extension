@@ -1,9 +1,9 @@
 {
-  "name": "Stylr - Change styles easily",
+  "name": "Stylr - Customize the web",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "With this extension you can easily change styles of any website.",
-  "homepage_url": "http://cucuionel.com",
+  "homepage_url": "http://example.com",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -17,7 +17,7 @@
   "options_page": "src/options_custom/index.html",
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo",
+    "default_title": "Stylr - Customize the web",
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
@@ -26,24 +26,20 @@
     "clipboardWrite",
     "contentSettings",
     "contextMenus",
-    "cookies"
+    "cookies",
+    "tabs",
+    "webNavigation"
   ],
   "content_scripts": [
     {
+      "all_frames": true,
+      "js": ["apply.js"],
       "matches": [
-        "https://www.google.com/*"
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
       ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.google.com/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
+      "run_at": "document_start"
     }
   ]
 }
